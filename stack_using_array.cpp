@@ -39,9 +39,9 @@ void display(int array[])
     }
 }
 
-void peek(int array[])
+void peek(int array[], int index)
 {
-    cout << array[top - 1];
+    cout << array[top - index];
 }
 int main()
 {
@@ -67,8 +67,8 @@ int main()
             break;
         case 4:
             int location;
-            // cin >> location;
-            peek(arr);
+            cin >> location;
+            peek(arr, location);
             break;
         default:
             break;

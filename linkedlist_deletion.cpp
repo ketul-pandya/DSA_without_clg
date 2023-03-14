@@ -17,11 +17,11 @@ void linkedlist_traversal(struct Node *ptr)
 
 struct Node *deleteAtfirst(struct Node *head)
 {
-    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
-    // struct Node *ptr = head;
-    ptr->next = head;
-    head = head->next;
+    struct Node *ptr = head;
+    head = ptr->next;
     free(ptr);
+
+    // head = head->next;
     return head;
 }
 
@@ -102,10 +102,10 @@ int main()
          << endl;
     cout << "linkde list after deletion" << endl;
 
-    // head = deleteAtfirst(head);
+    head = deleteAtfirst(head);
     // head = deleteAtIndex(head, 1);
     // head = deleteAtEnd(head);
-    head = deleteAtGivenValue(head, 50);
+    // head = deleteAtGivenValue(head, 50);
 
     linkedlist_traversal(head);
 }
